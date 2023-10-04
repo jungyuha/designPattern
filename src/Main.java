@@ -77,7 +77,7 @@ public class Main {
 //        contextState.setState(ConcreteStateB.getInstance());
 //        contextState.requestHandle();
 
-        // 13. 템플릿 메소드
+        // 13. 템플릿 메소드 패턴
         AbstractTemplate templateMethod = null;
         templateMethod = new ConcreteClass1();
         templateMethod.templateMethod();

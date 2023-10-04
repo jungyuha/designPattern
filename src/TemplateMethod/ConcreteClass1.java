@@ -2,6 +2,11 @@ package TemplateMethod;
 
 public class ConcreteClass1 extends AbstractTemplate {
     @Override
+    boolean hook() {
+        return false;
+    }
+
+    @Override
     void step1() {
         System.out.println("ConcreteClass1_Step1");
     }
@@ -15,4 +20,5 @@ public class ConcreteClass1 extends AbstractTemplate {
     void step3() {
         System.out.println("ConcreteClass1_Step3");
     }
+
 }

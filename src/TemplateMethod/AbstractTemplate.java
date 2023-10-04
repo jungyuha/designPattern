@@ -4,9 +4,8 @@ public abstract class AbstractTemplate {
     public final void templateMethod(){
         step1();
         if(hook()){
-
+            step2();
         }
-        step2();
         step3();
     }
 
