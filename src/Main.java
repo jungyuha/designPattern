@@ -1,6 +1,9 @@
 import State.ConcreteStateA;
 import State.ConcreteStateB;
 import State.ContextState;
+import TemplateMethod.AbstractTemplate;
+import TemplateMethod.ConcreteClass1;
+import TemplateMethod.ConcreteClass2;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -68,10 +71,18 @@ public class Main {
 //        strategyContext.operation();
 
         // 12. 상태 패턴
-        ContextState contextState = new ContextState();
-        contextState.setState(ConcreteStateA.getInstance());
-        contextState.requestHandle();
-        contextState.setState(ConcreteStateB.getInstance());
-        contextState.requestHandle();
+//        ContextState contextState = new ContextState();
+//        contextState.setState(ConcreteStateA.getInstance());
+//        contextState.requestHandle();
+//        contextState.setState(ConcreteStateB.getInstance());
+//        contextState.requestHandle();
+
+        // 13. 템플릿 메소드
+        AbstractTemplate templateMethod = null;
+        templateMethod = new ConcreteClass1();
+        templateMethod.templateMethod();
+        templateMethod = new ConcreteClass2();
+        templateMethod.templateMethod();
+
     }
 }
