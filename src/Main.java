@@ -1,16 +1,6 @@
-import FactoryMethod.*;
-import AbstractFactory.*;
-import Observer.ConcreteObserver1;
-import Observer.ConcreteObserver2;
-import Observer.ConcreteSubject;
-import Observer.IObserver;
-import Proxy.LoggingProxy;
-import Proxy.ProtectionProxy;
-import Proxy.RealSubject;
-import Proxy.VirtualProxy;
-import Strategy.ConcreteStrategyA;
-import Strategy.ConcreteStrategyB;
-import Strategy.Context;
+import State.ConcreteStateA;
+import State.ConcreteStateB;
+import State.ContextState;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -71,10 +61,17 @@ public class Main {
 //        AbstractProductB productB_windows = factory.createProductB();
 
         // 11. 전략 패턴
-        Context strategyContext = new Context();
-        strategyContext.setStrategy(new ConcreteStrategyA());
-        strategyContext.operation();
-        strategyContext.setStrategy(new ConcreteStrategyB());
-        strategyContext.operation();
+//        ContextStrategy strategyContext = new Context();
+//        strategyContext.setStrategy(new ConcreteStrategyA());
+//        strategyContext.operation();
+//        strategyContext.setStrategy(new ConcreteStrategyB());
+//        strategyContext.operation();
+
+        // 12. 상태 패턴
+        ContextState contextState = new ContextState();
+        contextState.setState(new ConcreteStateA());
+        contextState.requestHandle();
+        contextState.setState(new ConcreteStateB());
+        contextState.requestHandle();
     }
 }
