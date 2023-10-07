@@ -8,6 +8,9 @@ import Proxy.LoggingProxy;
 import Proxy.ProtectionProxy;
 import Proxy.RealSubject;
 import Proxy.VirtualProxy;
+import Strategy.ConcreteStrategyA;
+import Strategy.ConcreteStrategyB;
+import Strategy.Context;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -59,12 +62,19 @@ public class Main {
 //        IProduct concreteProduct2= factory.createOperation();
 
         // 10. 추상 팩토리 패턴
-        AbstractFactory factory = null;
-        factory = ConcreteFactory_Mac.getInstance();   // 공장군 mac (싱글톤!!)
-        AbstractProductA productA_mac = factory.createProductA();
-        AbstractProductB productB_mac = factory.createProductB();
-        factory = ConcreteFactory_Windows.getInstance();    // 공장군 windows (싱글톤!!)
-        AbstractProductA productA_windows = factory.createProductA();
-        AbstractProductB productB_windows = factory.createProductB();
+//        AbstractFactory factory = null;
+//        factory = ConcreteFactory_Mac.getInstance();   // 공장군 mac (싱글톤!!)
+//        AbstractProductA productA_mac = factory.createProductA();
+//        AbstractProductB productB_mac = factory.createProductB();
+//        factory = ConcreteFactory_Windows.getInstance();    // 공장군 windows (싱글톤!!)
+//        AbstractProductA productA_windows = factory.createProductA();
+//        AbstractProductB productB_windows = factory.createProductB();
+
+        // 11. 전략 패턴
+        Context strategyContext = new Context();
+        strategyContext.setStrategy(new ConcreteStrategyA());
+        strategyContext.operation();
+        strategyContext.setStrategy(new ConcreteStrategyB());
+        strategyContext.operation();
     }
 }
