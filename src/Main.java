@@ -60,10 +60,10 @@ public class Main {
 
         // 10. 추상 팩토리 패턴
         AbstractFactory factory = null;
-        factory = ConcreteFactory_Mac.getInstance();   // 공장군 mac (싱글톤)
+        factory = ConcreteFactory_Mac.getInstance();   // 공장군 mac (싱글톤!)
         AbstractProductA productA_mac = factory.createProductA();
         AbstractProductB productB_mac = factory.createProductB();
-        factory = ConcreteFactory_Windows.getInstance();    // 공장군 windows (싱글톤)
+        factory = ConcreteFactory_Windows.getInstance();    // 공장군 windows (싱글톤!)
         AbstractProductA productA_windows = factory.createProductA();
         AbstractProductB productB_windows = factory.createProductB();
     }
