@@ -1,3 +1,4 @@
+import Proxy.LoggingProxy;
 import Proxy.ProtectionProxy;
 import Proxy.RealSubject;
 import Proxy.VirtualProxy;
@@ -27,7 +28,11 @@ public class Main {
 //        virtualProxy.operation();
 
         //6. 프록시 패턴 보호(구조)
-        ProtectionProxy protectionProxy = new ProtectionProxy(new RealSubject(),false);
-        protectionProxy.operation();
+//        ProtectionProxy protectionProxy = new ProtectionProxy(new RealSubject(),false);
+//        protectionProxy.operation();
+
+        //7. 프록시 패턴 보호(로깅)
+        LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
+        loggingProxy.operation();
     }
 }
