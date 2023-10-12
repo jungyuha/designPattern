@@ -28,6 +28,6 @@ public class Main {
         //4. 프록시 패턴 일반(구조)
         RealSubject realSubject = new RealSubject();
         Proxy normalProxy = new Proxy(realSubject);
-        normalProxy.operation();
+        normalProxy.operation();   //
     }
 }
