@@ -1,3 +1,7 @@
+import Observer.ConcreteObserver1;
+import Observer.ConcreteObserver2;
+import Observer.ConcreteSubject;
+import Observer.IObserver;
 import Proxy.LoggingProxy;
 import Proxy.ProtectionProxy;
 import Proxy.RealSubject;
@@ -32,7 +36,17 @@ public class Main {
 //        protectionProxy.operation();
 
         //7. 프록시 패턴 보호(로깅)
-        LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
-        loggingProxy.operation();
+//        LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
+//        loggingProxy.operation();
+
+        //8. 옵저버 패턴
+        ConcreteSubject concreteSubject = new ConcreteSubject();
+        IObserver observer1 = new ConcreteObserver1();
+        IObserver observer2 =  new ConcreteObserver2();
+        concreteSubject.registerObserver(observer1);
+        concreteSubject.registerObserver(observer2);
+        concreteSubject.notifyObserver();
+        concreteSubject.removeObserver(observer1);
+        concreteSubject.notifyObserver();
     }
 }
