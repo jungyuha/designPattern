@@ -52,17 +52,18 @@ public class Main {
 //        concreteSubject.notifyObserver();
 
         // 9. 팩토리 메서드 패턴
-//        AbstractFactoryMethod factory1 = new ConcreteFactory1();
-//        AbstractFactoryMethod factory2 = new ConcreteFactory2();
-//        IProduct concreteProduct1= factory1.createOperation();
-//        IProduct concreteProduct2= factory2.createOperation();
+//        AbstractFactoryMethod factory = null;
+//        factory = new ConcreteFactory1();
+//        IProduct concreteProduct1= factory.createOperation();
+//        factory = new ConcreteFactory2();
+//        IProduct concreteProduct2= factory.createOperation();
 
         // 10. 추상 팩토리 패턴
         AbstractFactory factory = null;
-        factory = new ConcreteFactory_Mac();    // 공장군 mac
+        factory = ConcreteFactory_Mac.getInstance();   // 공장군 mac (싱글톤)
         AbstractProductA productA_mac = factory.createProductA();
         AbstractProductB productB_mac = factory.createProductB();
-        factory = new ConcreteFactory_Windows();    // 공장군 windows
+        factory = ConcreteFactory_Windows.getInstance();    // 공장군 windows (싱글톤)
         AbstractProductA productA_windows = factory.createProductA();
         AbstractProductB productB_windows = factory.createProductB();
     }
