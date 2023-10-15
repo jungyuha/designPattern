@@ -69,9 +69,9 @@ public class Main {
 
         // 12. 상태 패턴
         ContextState contextState = new ContextState();
-        contextState.setState(new ConcreteStateA());
+        contextState.setState(ConcreteStateA.getInstance());
         contextState.requestHandle();
-        contextState.setState(new ConcreteStateB());
+        contextState.setState(ConcreteStateB.getInstance());
         contextState.requestHandle();
     }
 }
