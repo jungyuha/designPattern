@@ -1,6 +1,6 @@
-import FactoryMethod.AbstractFactoryMethod;
-import FactoryMethod.ConcreteFactoryMethod1;
-import FactoryMethod.ConcreteFactoryMethod2;
+import AbstractFactory.ConcreteFactoryForMac;
+import AbstractFactory.ConcreteFactoryForWin;
+import AbstractFactory.IFactory;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -50,22 +50,30 @@ public class Main {
 //            iSubject.deleteObserver(iObserver1);
 //            iSubject.notifyObserver();
         // 9. 팩토리 메서드 패턴
-            AbstractFactoryMethod master = null;
-            AbstractFactoryMethod factory1 = new ConcreteFactoryMethod1();
-            AbstractFactoryMethod factory2 = new ConcreteFactoryMethod2();
-            master = factory1;
-            master.createOperate();
-            master = factory2;
-            master.createOperate();
+//            AbstractFactoryMethod master = null;
+//            AbstractFactoryMethod factory1 = new ConcreteFactoryMethod1();
+//            AbstractFactoryMethod factory2 = new ConcreteFactoryMethod2();
+//            master = factory1;
+//            master.createOperate();
+//            master = factory2;
+//            master.createOperate();
 
         // 10. 추상 팩토리 패턴
-//        AbstractFactory factory = null;
-//        factory = ConcreteFactory_Mac.getInstance();   // 공장군 mac (싱글톤!!)
-//        AbstractProductA productA_mac = factory.createProductA();
-//        AbstractProductB productB_mac = factory.createProductB();
-//        factory = ConcreteFactory_Windows.getInstance();    // 공장군 windows (싱글톤!!)
-//        AbstractProductA productA_windows = factory.createProductA();
-//        AbstractProductB productB_windows = factory.createProductB();
+
+        IFactory iFactory = null;
+        IFactory iFactoryMac = ConcreteFactoryForMac.getInstance();
+        IFactory iFactoryWin = ConcreteFactoryForWin.getInstance();
+
+        iFactory = iFactoryMac; // 교체
+        iFactory.createKeyboard();  // 메소드명 같음 > 다형성
+        iFactory.createMouse();
+
+        iFactory = iFactoryWin;
+        iFactory.createKeyboard();
+        iFactory.createMouse();
+
+
+
 
         // 11. 전략 패턴
 //        ContextStrategy strategyContext = new Context();
