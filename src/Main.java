@@ -1,4 +1,8 @@
 import Builder.Person_SingleGof;
+import Decorator2.ComponenetDecorator1;
+import Decorator2.ComponenetDecorator2;
+import Decorator2.FirstComponent;
+import Decorator2.IComponent;
 import State.ConcreteStateA;
 import State.ConcreteStateB;
 import State.ContextState;
@@ -13,6 +17,12 @@ public class Main {
         // 1. 데코레이터 패턴(구조)
 //        IComponent decorator = new ComponentDecorator2(new ComponentDecorator1(new ConcreteComponent()));
 //        decorator.operation();
+
+        ComponenetDecorator1 iComponent = new ComponenetDecorator1(new FirstComponent());
+        iComponent.operation2();
+
+        ComponenetDecorator2 iComponent2 = new ComponenetDecorator2(iComponent);
+        iComponent2.operation2();
 
         // 2. 어댑터 패턴_합성(구조)
 //        Adapater adapter_composition = new Adapater(new Adaptee());
@@ -86,9 +96,9 @@ public class Main {
 //        templateMethod.templateMethod();
 
         // 14. 빌더패턴(싱글 GOF)
-        Person_SingleGof instance1 = new Person_SingleGof
-                                    .BuilderSingleGof()
-                                    .name("test1")
-                                    .age(21).build();
+//        Person_SingleGof instance1 = new Person_SingleGof
+//                                    .BuilderSingleGof()
+//                                    .name("test1")
+//                                    .age(21).build();
     }
 }
