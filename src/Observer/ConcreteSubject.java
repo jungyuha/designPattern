@@ -4,23 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConcreteSubject implements ISubject{
-    List<IObserver> observers = new ArrayList<>();
+    List<IObserver> observerList = new ArrayList<>();
     @Override
     public void registerObserver(IObserver iObserver) {
-        observers.add(iObserver);
-        System.out.println("등록 : "+iObserver);
+        observerList.add(iObserver);
     }
 
     @Override
-    public void removeObserver(IObserver iObserver) {
-        observers.remove(iObserver);
-        System.out.println("삭제 : "+iObserver);
+    public void deleteObserver(IObserver iObserver) {
+        observerList.remove(iObserver);
     }
 
     @Override
     public void notifyObserver() {
-        for(IObserver o : observers){
-            o.update(); // 위임
+        for(IObserver io : observerList){
+            io.update();
         }
     }
 }

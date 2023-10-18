@@ -1,12 +1,10 @@
 package FactoryMethod;
 
 public abstract class AbstractFactoryMethod {
-
-    public final IProduct createOperation(){
-        IProduct product = createProduct();
-        product.setting();
-
-        return product;
+    public final void createOperate(){
+        System.out.println("생성 전처리");
+        createConcreteProduct();
+        System.out.println("생성 후처리");
     }
-    abstract protected IProduct createProduct() ;
+    abstract IProduct createConcreteProduct();
 }

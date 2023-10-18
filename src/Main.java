@@ -1,6 +1,6 @@
-import Observer2.*;
-import Observer2.ISubject;
-import Proxy.*;
+import FactoryMethod.AbstractFactoryMethod;
+import FactoryMethod.ConcreteFactoryMethod1;
+import FactoryMethod.ConcreteFactoryMethod2;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -37,24 +37,26 @@ public class Main {
 //        protectionProxy.operation();
 
         // 7. 프록시 패턴 보호(로깅)
-            LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
-            loggingProxy.operation();
+//            LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
+//            loggingProxy.operation();
 
         // 8. 옵저버 패턴
-            ISubject iSubject = new ConcreteSubject();
-            IObserver iObserver1 = new ConcreteObserver1();
-            IObserver iObserver2 = new ConcreteObserver2();
-            iSubject.registerObserver(iObserver1);
-            iSubject.registerObserver(iObserver2);
-            iSubject.notifyObserver();
-            iSubject.deleteObserver(iObserver1);
-            iSubject.notifyObserver();
+//            ISubject iSubject = new ConcreteSubject();
+//            IObserver iObserver1 = new ConcreteObserver1();
+//            IObserver iObserver2 = new ConcreteObserver2();
+//            iSubject.registerObserver(iObserver1);
+//            iSubject.registerObserver(iObserver2);
+//            iSubject.notifyObserver();
+//            iSubject.deleteObserver(iObserver1);
+//            iSubject.notifyObserver();
         // 9. 팩토리 메서드 패턴
-//        AbstractFactoryMethod factory = null;
-//        factory = new ConcreteFactory1();
-//        IProduct concreteProduct1= factory.createOperation();
-//        factory = new ConcreteFactory2();
-//        IProduct concreteProduct2= factory.createOperation();
+            AbstractFactoryMethod master = null;
+            AbstractFactoryMethod factory1 = new ConcreteFactoryMethod1();
+            AbstractFactoryMethod factory2 = new ConcreteFactoryMethod2();
+            master = factory1;
+            master.createOperate();
+            master = factory2;
+            master.createOperate();
 
         // 10. 추상 팩토리 패턴
 //        AbstractFactory factory = null;
