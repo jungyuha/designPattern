@@ -1,27 +1,23 @@
-import Adapter_composition.AdapteeOld;
-import Adapter_composition.AdapterNew;
-import Decorator.ComponenetDecorator1;
-import Decorator.ComponenetDecorator2;
-import Decorator.FirstComponent;
+import Proxy.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         // 1. 데코레이터 패턴(구조)
-        ComponenetDecorator1 iComponent = new ComponenetDecorator1(new FirstComponent());
-        iComponent.operation2();
-
-        ComponenetDecorator2 iComponent2 = new ComponenetDecorator2(iComponent);
-        iComponent2.operation2();
+//        ComponenetDecorator1 iComponent = new ComponenetDecorator1(new FirstComponent());
+//        iComponent.operation2();
+//
+//        ComponenetDecorator2 iComponent2 = new ComponenetDecorator2(iComponent);
+//        iComponent2.operation2();
 
         // 2. 어댑터 패턴_합성(구조)
-        AdapterNew adapterNew = new AdapterNew(new AdapteeOld());
-        adapterNew.newOperation();
+//        AdapterNew adapterNew = new AdapterNew(new AdapteeOld());
+//        adapterNew.newOperation();
 
         // 3. 어댑터 패턴_상속(구조)
-//        Adapter adapter_inheritance = new Adapter();
-//        adapter_inheritance.newOperation();
+//        AdapterNew adapterNew = new AdapterNew();
+//        adapterNew.newOperation();
 
         // 4. 프록시 패턴 일반(구조)
 //        NormalProxy normalProxy = new NormalProxy(new RealSubject());
@@ -30,14 +26,17 @@ public class Main {
         // 5. 프록시 패턴 가상(구조)
 //        VirtualProxy virtualProxy = new VirtualProxy();
 //        virtualProxy.operation();
+//        virtualProxy.operation();
 
         // 6. 프록시 패턴 보호(구조)
 //        ProtectionProxy protectionProxy = new ProtectionProxy(new RealSubject(),false);
 //        protectionProxy.operation();
+//        ProtectionProxy protectionProxy = new ProtectionProxy(new RealSubject(),true);
+//        protectionProxy.operation();
 
         // 7. 프록시 패턴 보호(로깅)
-//        LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
-//        loggingProxy.operation();
+            LoggingProxy loggingProxy = new LoggingProxy(new RealSubject());
+            loggingProxy.operation();
 
         // 8. 옵저버 패턴
 //        ConcreteSubject concreteSubject = new ConcreteSubject();

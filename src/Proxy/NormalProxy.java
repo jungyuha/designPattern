@@ -1,16 +1,14 @@
 package Proxy;
 
-import Proxy.ISubject;
-
-public class NormalProxy implements ISubject {
-    private ISubject realSubject;
-    public NormalProxy(ISubject subject){
-        this.realSubject=subject;
+public class NormalProxy implements ISubject{
+    ISubject iSubject;
+    public NormalProxy(ISubject iSubject){
+        this.iSubject=iSubject;
     }
     @Override
     public void operation() {
-        realSubject.operation();    // 위임받음
-        System.out.println("프록시 위임 액션");
+        System.out.println("before origin in NormalProxy");
+        iSubject.operation();
+        System.out.println("after origin in NormalProxy");
     }
-
 }

@@ -1,7 +1,5 @@
 package Adapter_composition;
 
-import Adapter_composition.Adaptee;
-
 public class AdapterNew implements Target{
     AdapteeOld adapteeOld ;
     public AdapterNew(AdapteeOld adapteeOld){

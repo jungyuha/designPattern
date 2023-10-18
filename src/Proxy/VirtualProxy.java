@@ -1,15 +1,16 @@
 package Proxy;
 
 public class VirtualProxy implements ISubject{
-    RealSubject realSubject;
-    public VirtualProxy(){}
+    ISubject iSubject ;
     @Override
     public void operation() {
-        if(realSubject==null){
-            System.out.println("객체 생성");
-            realSubject=new RealSubject();
+        if(iSubject==null){
+            iSubject = new RealSubject();
         }
-        realSubject.operation();
-        System.out.println("가상 프록시 위임 액션");
+        else{
+            System.out.println("before Virtual Proxy");
+            iSubject.operation();
+            System.out.println("after Virtual Proxy");
+        }
     }
 }
