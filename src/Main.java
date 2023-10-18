@@ -1,3 +1,5 @@
+import Observer2.*;
+import Observer2.ISubject;
 import Proxy.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -39,15 +41,14 @@ public class Main {
             loggingProxy.operation();
 
         // 8. 옵저버 패턴
-//        ConcreteSubject concreteSubject = new ConcreteSubject();
-//        IObserver observer1 = new ConcreteObserver1();
-//        IObserver observer2 =  new ConcreteObserver2();
-//        concreteSubject.registerObserver(observer1);
-//        concreteSubject.registerObserver(observer2);
-//        concreteSubject.notifyObserver();
-//        concreteSubject.removeObserver(observer1);
-//        concreteSubject.notifyObserver();
-
+            ISubject iSubject = new ConcreteSubject();
+            IObserver iObserver1 = new ConcreteObserver1();
+            IObserver iObserver2 = new ConcreteObserver2();
+            iSubject.registerObserver(iObserver1);
+            iSubject.registerObserver(iObserver2);
+            iSubject.notifyObserver();
+            iSubject.deleteObserver(iObserver1);
+            iSubject.notifyObserver();
         // 9. 팩토리 메서드 패턴
 //        AbstractFactoryMethod factory = null;
 //        factory = new ConcreteFactory1();
