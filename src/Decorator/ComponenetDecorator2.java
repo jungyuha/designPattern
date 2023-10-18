@@ -1,4 +1,4 @@
-package Decorator2;
+package Decorator;
 
 public class ComponenetDecorator2 extends Decorator{
     public ComponenetDecorator2(IComponent com) {

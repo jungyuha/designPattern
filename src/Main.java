@@ -1,23 +1,14 @@
-import Builder.Person_SingleGof;
-import Decorator2.ComponenetDecorator1;
-import Decorator2.ComponenetDecorator2;
-import Decorator2.FirstComponent;
-import Decorator2.IComponent;
-import State.ConcreteStateA;
-import State.ConcreteStateB;
-import State.ContextState;
-import TemplateMethod.AbstractTemplate;
-import TemplateMethod.ConcreteClass1;
-import TemplateMethod.ConcreteClass2;
+import Adapter_composition.AdapteeOld;
+import Adapter_composition.AdapterNew;
+import Decorator.ComponenetDecorator1;
+import Decorator.ComponenetDecorator2;
+import Decorator.FirstComponent;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         // 1. 데코레이터 패턴(구조)
-//        IComponent decorator = new ComponentDecorator2(new ComponentDecorator1(new ConcreteComponent()));
-//        decorator.operation();
-
         ComponenetDecorator1 iComponent = new ComponenetDecorator1(new FirstComponent());
         iComponent.operation2();
 
@@ -25,8 +16,8 @@ public class Main {
         iComponent2.operation2();
 
         // 2. 어댑터 패턴_합성(구조)
-//        Adapater adapter_composition = new Adapater(new Adaptee());
-//        adapter_composition.newOperation();
+        AdapterNew adapterNew = new AdapterNew(new AdapteeOld());
+        adapterNew.newOperation();
 
         // 3. 어댑터 패턴_상속(구조)
 //        Adapter adapter_inheritance = new Adapter();

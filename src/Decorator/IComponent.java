@@ -1,5 +1,5 @@
 package Decorator;
 
 public interface IComponent {
-    void operation();
+    void operation2();
 }

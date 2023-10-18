@@ -1,4 +1,4 @@
-package Decorator2;
+package Decorator;
 
 public class FirstComponent implements IComponent{
     @Override
