@@ -8,12 +8,9 @@ public abstract class AbstractTemplate {
         }
         step3();
     }
-
-    boolean hook(){
-        return true;
-    }
-
+    abstract boolean hook();
     abstract void step1();
     abstract void step2();
     abstract void step3();
+
 }

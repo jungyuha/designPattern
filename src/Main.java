@@ -1,8 +1,4 @@
-import State.ConcreteState1;
-import State.ContextState;
-import TemplateMethod2.AbstractTemplate;
-import TemplateMethod2.ConcreteClass1;
-import TemplateMethod2.ConcreteClass2;
+import Builder.SingleObj;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -92,18 +88,27 @@ public class Main {
 //        contextState.requestHandle();
 
         // 13. 템플릿 메소드 패턴
-        AbstractTemplate master =null;
-        AbstractTemplate class1 = new ConcreteClass1();
-        AbstractTemplate class2 = new ConcreteClass2();
-        master = class1;
-        master.templateMethod();
-        master = class2;
-        master.templateMethod();
+//        AbstractTemplate master =null;
+//        AbstractTemplate class1 = new ConcreteClass1();
+//        AbstractTemplate class2 = new ConcreteClass2();
+//        master = class1;
+//        master.templateMethod();
+//        master = class2;
+//        master.templateMethod();
 
-        // 14. 빌더패턴(싱글 GOF)
-//        Person_SingleGof instance1 = new Person_SingleGof
-//                                    .BuilderSingleGof()
-//                                    .name("test1")
-//                                    .age(21).build();
+        // 14. 빌더패턴(일반)
+//        TestBuilder builder = new TestBuilder();
+//        TestObj testObj=builder.test1("test1")
+//                .test2(1)
+//                .builder();
+//        System.out.println(testObj.toString());
+
+        // 15. 빌더패턴(싱글)
+        SingleObj.Builder singleBuilder = new SingleObj.Builder();
+        SingleObj singleObj=singleBuilder.test1("test1")
+                .test2(1)
+                .builder();
+        System.out.println(singleObj.toString());
+
     }
 }
