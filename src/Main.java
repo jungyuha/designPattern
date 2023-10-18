@@ -1,7 +1,8 @@
-import Strategy.ConcreteStrategy1;
-import Strategy.ConcreteStrategy2;
-import Strategy.ContextStrategy;
-import Strategy.IStrategy;
+import State.ConcreteState1;
+import State.ContextState;
+import TemplateMethod2.AbstractTemplate;
+import TemplateMethod2.ConcreteClass1;
+import TemplateMethod2.ConcreteClass2;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -75,27 +76,29 @@ public class Main {
 
 
         // 11. 전략 패턴
-        ContextStrategy contextStrategy = new ContextStrategy();
-        IStrategy iStrategy = new ConcreteStrategy1();
-        IStrategy iStrategy2 = new ConcreteStrategy2();
-        contextStrategy.setiStrategy(iStrategy);
-        contextStrategy.operation();
-        contextStrategy.setiStrategy(iStrategy2);
-        contextStrategy.operation();
+//        ContextStrategy contextStrategy = new ContextStrategy();
+//        IStrategy iStrategy = new ConcreteStrategy1();
+//        IStrategy iStrategy2 = new ConcreteStrategy2();
+//        contextStrategy.setiStrategy(iStrategy);
+//        contextStrategy.operation();
+//        contextStrategy.setiStrategy(iStrategy2);
+//        contextStrategy.operation();
 
         // 12. 상태 패턴
-//        ContextState contextState = new ContextState();
-//        contextState.setState(ConcreteStateA.getInstance());
+//        ContextState contextState=new ContextState();
+//        contextState.setState(ConcreteState1.getInstance());
 //        contextState.requestHandle();
-//        contextState.setState(ConcreteStateB.getInstance());
+//        //contextState.setState(ConcreteState2.getInstance());
 //        contextState.requestHandle();
 
         // 13. 템플릿 메소드 패턴
-//        AbstractTemplate templateMethod = null;
-//        templateMethod = new ConcreteClass1();
-//        templateMethod.templateMethod();
-//        templateMethod = new ConcreteClass2();
-//        templateMethod.templateMethod();
+        AbstractTemplate master =null;
+        AbstractTemplate class1 = new ConcreteClass1();
+        AbstractTemplate class2 = new ConcreteClass2();
+        master = class1;
+        master.templateMethod();
+        master = class2;
+        master.templateMethod();
 
         // 14. 빌더패턴(싱글 GOF)
 //        Person_SingleGof instance1 = new Person_SingleGof

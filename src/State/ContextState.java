@@ -1,14 +1,13 @@
 package State;
 
 public class ContextState {
-    IState state;
-
-    public void setState(IState state){
-        System.out.println("current state :: "+state);
-        this.state=state;
+    IState iState;  // 상태는 싱글톤이다.
+    public void setState(IState iState){
+        System.out.println("상태 set :: "+iState);
+        this.iState = iState;
     }
     public void requestHandle(){
-        state.operation(this);
+        iState.operation1(this);
+        iState.operation2(this);
     }
-
 }
