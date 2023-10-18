@@ -1,3 +1,4 @@
+import Builder.Person_SingleGof;
 import State.ConcreteStateA;
 import State.ConcreteStateB;
 import State.ContextState;
@@ -78,11 +79,16 @@ public class Main {
 //        contextState.requestHandle();
 
         // 13. 템플릿 메소드 패턴
-        AbstractTemplate templateMethod = null;
-        templateMethod = new ConcreteClass1();
-        templateMethod.templateMethod();
-        templateMethod = new ConcreteClass2();
-        templateMethod.templateMethod();
+//        AbstractTemplate templateMethod = null;
+//        templateMethod = new ConcreteClass1();
+//        templateMethod.templateMethod();
+//        templateMethod = new ConcreteClass2();
+//        templateMethod.templateMethod();
 
+        // 14. 빌더패턴(싱글 GOF)
+        Person_SingleGof instance1 = new Person_SingleGof
+                                    .BuilderSingleGof()
+                                    .name("test1")
+                                    .age(21).build();
     }
 }
