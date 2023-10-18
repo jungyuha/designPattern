@@ -1,6 +1,7 @@
-import AbstractFactory.ConcreteFactoryForMac;
-import AbstractFactory.ConcreteFactoryForWin;
-import AbstractFactory.IFactory;
+import Strategy.ConcreteStrategy1;
+import Strategy.ConcreteStrategy2;
+import Strategy.ContextStrategy;
+import Strategy.IStrategy;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -60,27 +61,27 @@ public class Main {
 
         // 10. 추상 팩토리 패턴
 
-        IFactory iFactory = null;
-        IFactory iFactoryMac = ConcreteFactoryForMac.getInstance();
-        IFactory iFactoryWin = ConcreteFactoryForWin.getInstance();
-
-        iFactory = iFactoryMac; // 교체
-        iFactory.createKeyboard();  // 메소드명 같음 > 다형성
-        iFactory.createMouse();
-
-        iFactory = iFactoryWin;
-        iFactory.createKeyboard();
-        iFactory.createMouse();
-
-
+//        IFactory iFactory = null;
+//        IFactory iFactoryMac = ConcreteFactoryForMac.getInstance();
+//        IFactory iFactoryWin = ConcreteFactoryForWin.getInstance();
+//
+//        iFactory = iFactoryMac; // 교체
+//        iFactory.createKeyboard();  // 메소드명 같음 > 다형성
+//        iFactory.createMouse();
+//
+//        iFactory = iFactoryWin;
+//        iFactory.createKeyboard();
+//        iFactory.createMouse();
 
 
         // 11. 전략 패턴
-//        ContextStrategy strategyContext = new Context();
-//        strategyContext.setStrategy(new ConcreteStrategyA());
-//        strategyContext.operation();
-//        strategyContext.setStrategy(new ConcreteStrategyB());
-//        strategyContext.operation();
+        ContextStrategy contextStrategy = new ContextStrategy();
+        IStrategy iStrategy = new ConcreteStrategy1();
+        IStrategy iStrategy2 = new ConcreteStrategy2();
+        contextStrategy.setiStrategy(iStrategy);
+        contextStrategy.operation();
+        contextStrategy.setiStrategy(iStrategy2);
+        contextStrategy.operation();
 
         // 12. 상태 패턴
 //        ContextState contextState = new ContextState();

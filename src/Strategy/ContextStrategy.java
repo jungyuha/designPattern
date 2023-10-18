@@ -1,12 +1,12 @@
 package Strategy;
 
-public class ContextStrategy {  // 컨텍스트의 역할 : 전략 알고리즘을 1.설정 2.실행
-    IStrategy strategy; // 전략 인터페이스를 합성
+public class ContextStrategy {
+    IStrategy iStrategy;
 
-    public void setStrategy(IStrategy strategy){
-        this.strategy=strategy;
+    public void setiStrategy(IStrategy iStrategy){
+        this.iStrategy=iStrategy;
     }
-    public void operation (){
-        this.strategy.operation();
+    public void operation(){
+        iStrategy.operation();
     }
 }
